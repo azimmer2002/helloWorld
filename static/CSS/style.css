@@ -1,0 +1,47 @@
+/* Apply the times new roman font to the entire web pate */
+body {
+    font-family: "Times New Roman", Times, serif;
+}
+/* Apply a grey color to all of the paragraph text and align the paragraphs to the left */
+p {
+    color: #383838;
+    text-align: left;
+}
+/* Assign the grey color to the list elements as well to remain consistent */
+li {
+    color: #383838;
+}
+/* Make all the h2 headers center aligned and bold */
+h2 {
+    text-align: center;
+    font-weight: bold;
+}
+/* Make the table and its attributes the grey color with a thin solid black border with a total
+width of the table of 22% and align the text to the center */
+table, td, th {
+    color: #383838;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    border-collapse: collapse;
+    width: 22%;
+    text-align: center;
+}
+/* Make the table header only bold */
+th {
+    font-weight: bold;
+}
+/* Create a special id to make the text red and size 20px */
+#special-id {
+    color: red;
+    font-size: 20px;
+}
+/* Create a class that underlines the specified text */
+p.underline {
+    text-decoration: underline;
+}
+/* Size the image appropriately on the web page */
+a.logo {
+    width: 272px;
+    height: 72px;
+}
