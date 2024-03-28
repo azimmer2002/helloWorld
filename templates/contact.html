@@ -1,0 +1,80 @@
+{%  extends "base.html" %}
+
+{% block page_title %}
+    Contact
+{% endblock %}
+
+{%  block page_head %}
+    Contact Me
+{% endblock %}
+
+{%  block page_content %}
+    {% if form_submitted %}
+        <div class="container">
+            <div class="col-12">
+                <h2>Thank you for completing my form!</h2>
+            </div>
+            <div class="col-mb-6">
+                <p>First Name: {{ request.form.get('first_name') }}</p>
+            </div>
+            <div class="col-mb-6">
+                <p>Last Name: {{ request.form.get('last_name') }}</p>
+            </div>
+            <div class="col-mb-6">
+                <p>Email: {{ request.form.get('email') }}</p>
+            </div>
+            <div class="col-mb-6">
+                <p>Phone Number: {{ request.form.get('phone_number') }}</p>
+            </div>
+            <div class="col-mb-6">
+                <p>Preferred method of contact: {{ request.form.get('contact_method') }}</p>
+            </div>
+            <!-- Button to take user back to the contact input screen -->
+            <a href="{{ url_for('contact') }}" class="btn btn-success">Complete form again</a>
+        </div>
+
+    {% else %}
+        <form action="{{ url_for('contact') }}" method="post">
+            <!-- 2 column grid layout with text inputs for the first and last names -->
+            <div class="row mb-4">
+                <div class="col">
+                    <div data-mdb-input-init class="form-outline">
+                        <label for="first_name" class="form-label">First name</label>
+                        <input type="text" class="form-control" id="first_name" name="first_name"/>
+                    </div>
+                </div>
+                <div class="col">
+                    <div data-mdb-input-init class="form-outline">
+                        <label for="last_name" class="form-label">Last name</label>
+                        <input type="text" class="form-control" id="last_name" name="last_name"/>
+                    </div>
+                </div>
+            </div>
+            <!-- Email input -->
+            <div data-mdb-input-init class="form-outline mb-4">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email"/>
+            </div>
+            <!-- 2 column grid layout with text input for phone number and dropdown for contact method -->
+            <div class="row mb-4">
+                <!-- Phone number input -->
+                <div class="form-outline col-md-7">
+                    <label for="phone_number" class="form-label">Phone Number</label>
+                    <input type="tel" class="form-control" id="phone_number" name="phone_number"/>
+                </div>
+                <!-- Dropdown to choose preferred method of contact -->
+                <div class="form-group col-md-5">
+                    <label for="contact_method" class="form-label">Preferred Method of Contact</label>
+                    <select class="form-select" id="contact_method" name="contact_method">
+                        <option selected>Choose Option</option>
+                        <option value='Email'>Email</option>
+                        <option value='Phone Call'>Phone Call</option>
+                    </select>
+                </div>
+            </div>
+            <!-- Submit button for form -->
+            <button type="submit" class="btn btn-primary">Submit Form</button>
+        </form>
+    {%  endif %}
+
+{% endblock %}
