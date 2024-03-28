@@ -12,7 +12,7 @@ li {
     color: #383838;
 }
 /* Make all the h2 headers center aligned and bold */
-h2 {
+h1, h2 {
     text-align: center;
     font-weight: bold;
 }
@@ -44,4 +44,21 @@ p.underline {
 a.logo {
     width: 272px;
     height: 72px;
+}
+
+form {
+    margin-left: 15em;
+    margin-right: 15em;
+    margin-top: 3em;
+}
+h1 {
+    padding-top: 1em;
+}
+div.center {
+    text-align: center
+}
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
